@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link type="image/png" sizes="96x96" rel="icon" href=".../icons8-sparkling-ios7-96.png">
+    <link type="image/png" sizes="120x120" rel="icon" href=".../icons8-clock-win10-120.png">
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+    
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            /* background-color:#fafaf8; */
+        }
+
+        p {
+          color:#7e7b79;
+          
+        }
+      
+
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0;
+            /* background-color: aqua; */
+            height: 50px;
+            padding-right: 50px;
+            padding-left: 50px;
+            position: sticky;
+            top: 0px;
+            background-color: rgba(255, 255, 255, 0.027);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            
+        }
+
+        nav h1{
+             color: #d4923c;
+        }
+
+
+
+        nav button {
+            padding: 10px 25px;
+            background-color:#d4923c;
+            border-radius:7px;
+            border: 1px #a3a3a3 solid;
+            margin-right: 15px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        nav ul  li{
+            display: inline;
+            padding: 10px 5px;
+            cursor: pointer;
+           
+        }
+
+        nav ul li a{
+            text-decoration: none;
+             color: black;
+             font-family: Arial, Helvetica, sans-serif;
+             font-weight: bolder;
+        }
+        hr{
+            margin: 0;
+        }
+
+        span{
+            color: #d4923c;
+        }
+
+        section{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            background-color: #fbfbfb;
+            padding-top: 100px;
+           
+        }
+
+        section :nth-child(1){
+            margin-bottom: 20px;
+        }
+
+        section div h1{
+            font-size: 50px;
+        }
+       
+        
+
+        section div button{
+            margin-top: 20px;
+            padding: 10px 25px;
+            background-color: #ffffff;
+            border-radius:7px;
+            border: 1px #a3a3a3 solid;
+            margin-right: 15px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+          
+           
+            
+        }
+
+        section div:last-child{
+            padding-top: 100px;
+        }
+        
+
+
+
+
+        .grid-container{
+            display: grid;
+            grid-template-columns: 300px 300px ;
+            grid-template-rows: 200px 200px  ;
+            gap: 1em;
+            /* align-items: center; */
+            justify-content: center;
+            grid-template-areas: 
+            "box-1 box-2  box-3"
+            "box-4  box-5 box-6";
+            background-color:#fafaf8;
+            margin-bottom: 0;
+            padding: 50px;
+            /* padding: 10px 20px; */
+        }
+
+        .box{
+            background-color: #ffffff;
+            border: 1px  ;
+            padding: 10px 20px;
+            /* padding-top: 10px;
+            padding-left:20px; */
+            overflow:hidden;
+            border-radius: 7px;
+            margin-bottom: 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+           
+            
+        }
+
+        .box img {
+            width: 20px;
+            background-color: #faf4e9;
+            /* fill: #e5c092; */
+            padding: 10px 10px;
+            border-radius: 7px;
+        }
+
+        .box h3{
+            margin-bottom: 20px;
+            margin-top: 10px;
+            font-size: 15px;
+        }
+
+        .box p:last-child{
+            margin-top: 10px;
+            font-weight: bold;
+            color: black;
+
+        }
+
+        article{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            
+        }
+
+        .description{
+            padding: 50px
+        }
+
+        .slide-container{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: row;
+           
+                 
+        }
+
+        .wrapper img{
+            width: 300px;
+            border-radius: 10px; 
+            padding: 20px;
+        }
+
+        .footer-container{
+            text-align: center;
+           margin-top: 50px;
+        }
+
+        footer{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            max-width: 600px;
+            max-width: 600px;
+            background-color:#fafaf8;
+            padding: 20px;
+            margin: 50px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        form{
+             background-color:#fafaf8;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-row {
+            display: flex;
+            gap: 10px;
+        }
+        .form-row .form-group {
+            flex: 1;
+        }
+        .Appointment {
+            background-color: #c48f56;
+            color: white;
+            padding: 12px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .Appointment:hover {
+            background-color: #a67545;
+        }
+            
+            
+          
+        
+            
+        
+            
+
+         /* @media(max-width: 42rem){
+            .grid-container{
+            grid-template-columns: 300px 300px;
+            grid-template-rows: 200px 200px 200px 200px;
+            grid-template-areas: 
+            "box-1 box-2 "
+            "box-3 box-4 "
+            "box-5 box-6";
+        } */
+
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>Bronzd</h1>
+        <ul>
+            <li><a href="">Service</a></li>
+            <li><a href="">Gallery</a></li>
+            <li><a href="">Book Now</a></li>
+            <li><a href="">Testimonials</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+        <button>Book Appointments</button>
+    </nav>
+    <hr>
+    <section>
+        <div>
+            <h1>Get Your Perfect <span>Sun- <br>Kiss Glow</span></h1>
+            <p>Professional spray tanning service that gives you a natural, streak-free <br> bronze that lasts. Look and feel your
+            best with Bronzd</p>
+            <button style="background-color:#d4923c ;">Book Appointment</button>
+            <button>View Service</button>
+        </div>
+
+        <div>
+            <h3>Our Tanning Services</h3>
+            <p>choose from our range of professional spray tanning service tailored to your skin tone <br> and preferences.</p>
+        </div>
+    </section>
+
+    <div class="grid-container">
+        <div class="box" style="grid-area: box-1">
+            <img src="landingicons/icons8-sparkling-100.png" alt="">
+            <h3>Express Tam</h3>
+            <p>Develop in just 1-3 hours. Perfect for last-munites <br> events or busy schedules</p>
+            <p>From $35</p>
+
+        </div>
+        <div class="box" style="grid-area: box-2">
+            <img src="landingicons/icons8-water-drop-96.png" alt="">
+            <h3>Classic Tan</h3>
+            <p>our signature spray tan with natural-looking <br>results that last 7-10 days.</p>
+            <p>From $45</p>
+
+        </div>
+        <div class="box" style="grid-area: box-3">
+            <img src="landingicons/icons8-clock-120.png" alt="">
+            <h3>Long-Lasting Tan</h3>
+            <p>Premium formula designed to last up to 14 days <br> with proper aftercare</p>
+            <p>From $55</p>
+
+        </div>
+        <div class="box" style="grid-area: box-4">
+            <img src="..//icons8-shield-96.png" alt="">
+            <h3>Organic Tan</h3>
+            All-natural, organic ingredients for sensitive skin <br> types.
+
+            <p>From $50</p>
+
+        </div>
+        <div class="box" style="grid-area: box-5">
+            <img src="landingicons/icons8-sparkling-100.png" alt="">
+            <h3>Contour Tan</h3>
+            <p>includes strategic contouring to enhance your <br> natural features.</p>
+
+            <p>From $56</p>
+
+        </div>
+        <div class="box" style="grid-area: box-6">
+            <img src="landingicons/icons8-water-drop-96.png" alt="">
+            <h3>Bridal Package</h3>
+            <p>Trial session plus pre-wedding tan with touch- <br> ups for your special day.</p>
+
+            <p>From $120</p>
+
+        </div>
+    </div>
+
+    <article>
+        <div class="description">
+            <h1>Our Gallery</h1>
+            <p>see the beautifull results of our professional spray tanning services.</p>
+        </div>
+        <div class="slide-container">
+            <div class="wrapper">
+                <img src="imageslide/slide1.webp" alt="">
+                <img src="imageslide/slide2.webp" alt="">
+                <img src="imageslide/slide3.webp" alt="">
+                <img src="imageslide/slide4.webp" alt="">
+                <img src="imageslide/slide5.webp" alt="">
+                <img src="imageslide/slide6.webp" alt="">
+                <img src="imageslide/slide7.webp" alt="">
+                <img src="imageslide/slide8.webp" alt="">
+            </div>
+        </div>
+    </article>
+
+    <div class="footer-container">
+        <h1>Book Your Appointment</h1>
+        <p>schedule your spray tanning session with our easy online booking system</p>
+    </div>
+
+    <footer>
+        <form>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+            </div>
+        
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">Service</label>
+                    <select id="service" required>
+                        <option value="">Select a service</option>
+                        <option value="spray_tan">Spray Tan</option>
+                        <option value="bronze_glow">Bronze Glow</option>
+                    </select>
+                </div>
+            </div>
+        
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Time</label>
+                    <input type="time" id="time" required>
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <label for="notes">Additional Notes</label>
+                <textarea id="notes" placeholder="Any special requests or information we should know?"></textarea>
+            </div>
+        
+            <button class="Appointment" type="submit">Book Appointment</button>
+        </form>
+    </footer>
+
+
+    
+</body>
+</html>
